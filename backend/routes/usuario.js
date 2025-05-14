@@ -28,6 +28,25 @@ router.post('/', async (req, res) => {
       res.status(500).json({ erro: 'Erro ao cadastrar usuário' });
     }
   });
+
+  router.post('/login', async (req, res) => {
+    const { email, senha } = req.body;
+  
+    try {
+      const result = await pool.query(
+        'SELECT * FROM usuarios WHERE email = $1 AND senha = $2',
+        [email, senha]
+      );
+  
+      if (result.rows.length > 0) {
+        res.json(result.rows[0]); // retorna o usuário
+      } else {
+        res.status(401).json({ erro: 'Credenciais inválidas' });
+      }
+    } catch (err) {
+      res.status(500).json({ erro: 'Erro ao realizar login' });
+    }
+  });
   
 
 module.exports = router;

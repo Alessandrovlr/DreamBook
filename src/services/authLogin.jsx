@@ -1,18 +1,17 @@
 import axios from "axios";
 
-const API_URL = "Adicionar Url";
+const API_URL = "http://localhost:3001"; // ou a URL do Render se estiver online
 
 export const LoginRequest = async (email, senha) => {
   try {
-    const response = await axios.get(API_URL);
-    const users = response.data;
+    const response = await axios.post(`${API_URL}/login`, {
+      email,
+      senha,
+    });
 
-    const user = users.find(
-      (user) => user.email === email && user.senha === senha
-    );
-    return user ? { success: true, user } : { success: false };
+    return { success: true, user: response.data };
   } catch (err) {
-    console.log(`Erro: ${err}`);
+    console.error("Erro ao fazer login:", err);
     return { success: false };
   }
 };
