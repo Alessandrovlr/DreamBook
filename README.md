@@ -1,12 +1,46 @@
-# React + Vite
+# 📚 DreamBook – Biblioteca Digital Comunitária
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao **DreamBook**, um sistema web completo criado para facilitar o acesso a livros por meio de uma plataforma de reservas, voltado para a comunidade. Este projeto foi desenvolvido como parte de um desafio/hackathon com o tema **Vida Urbana Inteligente**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+### ✅ Front-end (React + Vite + Tailwind)
+- Tela de login com autenticação simples
+- Cadastro de usuários e livros
+- Listagem de usuários, livros e reservas
+- Context API centralizado para controle de estado global
+- Navegação protegida com `react-router-dom`
+- Layout responsivo com Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ✅ Back-end (Node.js + Express + PostgreSQL)
+- API RESTful com rotas para:
+  - `GET /usuarios`
+  - `POST /usuarios/login`
+  - `GET /livros`
+  - `GET /reservas`
+  - `POST /reservas`
+- Conexão com banco de dados PostgreSQL (local ou hospedado no Render)
+- Validação básica de login
+- Separação de rotas por módulos (`livro.js`, `usuario.js`, `reserva.js`)
+
+---
+
+## 🧠 Tecnologias utilizadas
+
+| Stack | Ferramentas |
+|-------|-------------|
+| **Frontend** | React, Vite, TailwindCSS, Axios, React Router DOM |
+| **Backend**  | Node.js, Express, Cors, Dotenv, PostgreSQL (`pg`) |
+| **Banco de dados** | PostgreSQL via pgAdmin local ou Render cloud |
+| **Extras** | Context API, Environment Variables, Modular Routing |
+
+---
+
+## 🛠 Como rodar o projeto
+
+### 🔹 1. Clonar o repositório
+```bash
+git clone https://github.com/seu-usuario/dreambook.git
+cd dreambook
