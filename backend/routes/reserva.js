@@ -3,6 +3,21 @@ const pool = require('../services/db');
 
 const router = express.Router();
 
+
+router.get('/', async (req, res) => {
+    try {
+      const result = await pool.query(`
+        SELECT r.id, r.data_reserva, u.nome AS usuario, l.titulo AS livro
+        FROM reservas r
+        JOIN usuarios u ON u.id = r.id_usuario
+        JOIN livros l ON l.id = r.id_livro
+      `);
+      res.json(result.rows);
+    } catch (err) {
+      res.status(500).json({ erro: 'Erro ao buscar reservas' });
+    }
+  });
+
 // POST /reservas
 router.post('/', async (req, res) => {
   const { id_usuario, id_livro } = req.body;
