@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3001"; // ou a URL do Render se estiver online
+const API_URL = "http://localhost:3001";
 
 export const LoginRequest = async (email, senha) => {
   try {

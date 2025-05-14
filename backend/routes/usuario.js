@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
       );
   
       if (result.rows.length > 0) {
-        res.json(result.rows[0]); // retorna o usuário
+        res.json(result.rows[0]);
       } else {
         res.status(401).json({ erro: 'Credenciais inválidas' });
       }

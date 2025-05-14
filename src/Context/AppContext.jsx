@@ -8,7 +8,7 @@ export const AppProvider = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
   const [livros, setLivros] = useState([]);
   const [reservas, setReservas] = useState([]);
-  const [user, setUser] = useState(null); // usuário logado (opcional)
+  const [user, setUser] = useState(null); 
 
   const fetchUsuarios = async () => {
     try {
