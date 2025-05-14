@@ -11,8 +11,8 @@ export const AppProvider = ({ children }) => {
 
   const fetchLivros = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/livros");
-      setLivros(res.data);
+        const res = await axios.get("http://localhost:3001/livros");
+        setLivros(res.data);
     } catch (err) {
       console.error("Erro ao buscar livros:", err);
     }
