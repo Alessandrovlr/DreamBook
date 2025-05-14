@@ -1,9 +1,8 @@
-import './App.css'
+import { Rotas } from './Routes/Routes'
 
 function App() {
-
   return (
-   <><h1>aaaaaaaaaaaaaaaaaa</h1></>
+   <Rotas/>
   )
 }
 

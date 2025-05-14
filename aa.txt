@@ -1,0 +1,86 @@
+💼 HACKATHON: Vida Urbana Inteligente
+– Soluções para Cidades Modernas
+🏙 Contexto (mapa do produto)
+As cidades estão cada vez mais conectadas, mas enfrentam desafios como mobilidade,
+gestão de resíduos, segurança e acesso a serviços. Sua missão como equipe de
+desenvolvimento é propor e construir um sistema web funcional, com API + Frontend,
+que ajude a melhorar algum aspecto da vida urbana.
+🚀 Missão
+Cada grupo criará uma aplicação web que resolva um problema real das cidades
+modernas. O projeto deve conter um backend (API) e um frontend funcional em React.
+✅ Requisitos mínimos
+🔗 Backend (API)
+● Criar uma API com pelo menos 4 rotas REST (GET, POST, DELETE, PATCH)
+● Dados bem estruturados e coerentes com o tema.
+🖼 Frontend (React)
+● Listagem de dados da API (GET).
+● Formulário para adicionar dados (POST).
+● Ação de exclusão ou atualização (DELETE / PATCH).
+● Layout organizado com componentes reutilizáveis.
+● Feedback visual para interações (mensagens de sucesso, erro, loading).
+🌍 Tópicos reais para escolher (cada grupo escolhe 1)
+Sistema Descrição Rotas mínimas sugeridas
+🚗 Painel de
+Mobilidade
+Urbana
+Mapeia problemas como
+buracos, falta de sinalização, ou
+pontos de ônibus lotados.
+GET /ocorrencias, POST
+/ocorrencias, DELETE
+/ocorrencias/:id
+♻️ Coleta
+Inteligente de
+Resíduos
+Cadastra pontos de coleta,
+horários e feedback da
+população sobre a coleta.
+GET /pontos, POST
+/avaliacoes, PATCH
+/pontos/:id
+󰳋 Agenda de
+Saúde Pública
+Agendamento de consultas em
+UBS, vacinas, atendimento
+prioritário.
+GET /consultas, POST
+/consultas, DELETE
+/consultas/:id
+🛒 Feira Livre
+Digital
+Lista feiras da cidade, produtos,
+horário, e permite favoritar
+feiras.
+GET /feiras, POST
+/favoritos, PATCH
+/feiras/:id
+🚨 Botão do
+Cidadão
+Canal de denúncias e
+sugestões para a prefeitura.
+GET /denuncias, POST
+/denuncias, PATCH
+/denuncias/:id/status
+📚 Biblioteca
+Comunitária
+Digital
+Cadastro de livros disponíveis
+em pontos comunitários +
+reserva.
+GET /livros, POST
+/reserva, PATCH
+/livros/:id
+💡 Funcionalidades obrigatórias
+● [ ] Formulário de cadastro (ex: denúncia, ponto de coleta, livro...).
+● [ ] Listagem dos dados da API.
+● [ ] Ação de exclusão ou edição.
+● [ ] Feedback ao usuário.
+● [ ] Componentes reutilizáveis.
+🛠 Tecnologias recomendadas (mas livres)
+● Frontend: React + Vite + Tailwind (ou CSS puro).
+● Backend: JSON Server (rápido para prototipar) ou Express.js.. Mock.API
+● Extra: Pode usar GitHub ou Replit para colaboração.
+🏁 Planejamento ( 15–20min da aula)
+● Cada grupo deve planejar:
+○ Nome e proposta da solução.
+○ O que será implementado.
