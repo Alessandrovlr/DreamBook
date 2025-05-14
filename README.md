@@ -17,12 +17,12 @@ Bem-vindo ao **DreamBook**, um sistema web completo criado para facilitar o aces
 ### ✅ Back-end (Node.js + Express + PostgreSQL)
 - API RESTful com rotas para:
   - `GET /usuarios`
-  - `POST /usuarios/login`
+  - `POST /login`
   - `GET /livros`
   - `GET /reservas`
   - `POST /reservas`
 - Conexão com banco de dados PostgreSQL (local ou hospedado no Render)
-- Validação básica de login
+- Validação de login direto no banco
 - Separação de rotas por módulos (`livro.js`, `usuario.js`, `reserva.js`)
 
 ---
