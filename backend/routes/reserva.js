@@ -18,24 +18,24 @@ router.get('/', async (req, res) => {
     }
   });
 
-// POST /reservas
+
 router.post('/', async (req, res) => {
   const { id_usuario, id_livro } = req.body;
 
   try {
-    // Verifica se o livro está disponível
+
     const { rows } = await pool.query('SELECT disponivel FROM livros WHERE id = $1', [id_livro]);
     if (!rows[0]?.disponivel) {
       return res.status(400).json({ erro: 'Livro não está disponível' });
     }
 
-    // Cria reserva
+
     await pool.query(
       'INSERT INTO reservas (id_usuario, id_livro) VALUES ($1, $2)',
       [id_usuario, id_livro]
     );
 
-    // Atualiza livro para indisponível
+
     await pool.query(
       'UPDATE livros SET disponivel = FALSE WHERE id = $1',
       [id_livro]

@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.use('/livros', livrosRoutes);
 app.use('/usuarios', usuariosRoutes);
+app.use('/', usuariosRoutes);    
 app.use('/reservas', reservasRoutes);
 
 const PORT = process.env.PORT || 3001;

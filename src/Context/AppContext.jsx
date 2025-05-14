@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { LoginRequest } from "../services/authLogin";
 import axios from "axios";
 
 const AppContext = createContext();
@@ -7,7 +8,7 @@ export const AppProvider = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
   const [livros, setLivros] = useState([]);
   const [reservas, setReservas] = useState([]);
-  const [user, setUser] = useState(null); // usuário logado (opcional)
+  const [user, setUser] = useState(null); 
 
   const fetchUsuarios = async () => {
     try {
@@ -42,6 +43,15 @@ export const AppProvider = ({ children }) => {
     fetchReservas();
   }, []);
 
+  
+    const Login = async (userEmail, userSenha) => {
+      const { success, user } = await LoginRequest(userEmail, userSenha);
+      setUser(success ? user : null);
+      return success;
+    };
+  
+    const Logout = () => setUser(null);
+
   return (
     <AppContext.Provider
       value={{
@@ -49,7 +59,9 @@ export const AppProvider = ({ children }) => {
         livros,
         reservas,
         user,
-        setUser
+        setUser,
+        Login,
+        Logout
       }}
     >
       {children}
