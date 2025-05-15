@@ -5,7 +5,6 @@ export const CadastroUser = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [mensagem, setMensagem] = useState("");
 
   const handleCadastro = async (e) => {
     e.preventDefault();
@@ -16,47 +15,54 @@ export const CadastroUser = () => {
         email,
         senha,
       });
-
-      setMensagem("Usuário cadastrado com sucesso!");
       setNome("");
       setEmail("");
       setSenha("");
     } catch (err) {
       console.error(err);
-      setMensagem("Erro ao cadastrar usuário.");
     }
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded">
-      <h2 className="text-xl font-bold mb-4">Cadastro de Usuário</h2>
-      <form onSubmit={handleCadastro}>
+    <div className="flex flex-col justify-center items-center w-[100%] h-[100%] rounded bg-gray-900">
+      <form
+        onSubmit={handleCadastro}
+        className="flex flex-col justify-center items-center h-[90%] w-[80%] gap-5"
+      >
+        <h2 className="text-2xl font-bold">Cadastro de Usuário</h2>
         <input
           type="text"
           placeholder="Nome"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
-          className="w-full p-2 mb-3 border"
+          className="focus:outline-none w-[40%] h-[12%] bg-gray-700 rounded-sm pl-2"
+          required
         />
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 mb-3 border"
+          className="focus:outline-none w-[40%] h-[12%] bg-gray-700 rounded-sm pl-2"
+          required
         />
         <input
           type="password"
           placeholder="Senha"
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
-          className="w-full p-2 mb-3 border"
+          className="focus:outline-none w-[40%] h-[12%] bg-gray-700 rounded-sm pl-2"
+          required
         />
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2">
-          Cadastrar
-        </button>
+        <div className="flex flex-col w-[40%] h-[12%]">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white w-[40%] h-[100%] rounded-sm "
+          >
+            Cadastrar
+          </button>
+        </div>
       </form>
-      {mensagem && <p className="mt-4">{mensagem}</p>}
     </div>
   );
 };

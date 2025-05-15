@@ -6,7 +6,7 @@ export const Layout = () => {
     <div className="w-screen h-screen">
       <Menu />
 
-      <main className="w-screen h-[70%]">
+      <main className="flex flex-col justify-center items-center w-screen h-[70%]">
         <Outlet />
       </main>
 
